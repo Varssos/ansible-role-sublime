@@ -37,6 +37,7 @@
 - name: Add Sublime Text apt repository
   ansible.builtin.apt_repository:
     repo: "deb [signed-by={{ sublime_gpg_keyring }}] https://download.sublimetext.com/ apt/stable/"
+    filename: sublimehq
     state: present
   become: true
   when: sublime_installed.rc != 0
